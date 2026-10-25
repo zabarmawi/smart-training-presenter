@@ -1,0 +1,29 @@
+using System.Diagnostics;
+namespace SmartTrainingPresenter;
+public static class Pdf {
+ public static string ToolDirectory=Environment.GetEnvironmentVariable("STP_PDF_TOOLS")??"";
+ public static string NativePath=>Path.Combine(AppContext.BaseDirectory,"NativePdf.exe");
+ public static bool Ready=>File.Exists(NativePath);
+ public static string Description=>Ready?"عارض Windows PDF المدمج — جاهز":"عارض Windows PDF غير موجود؛ أعد تثبيت ملفات التطبيق";
+ internal static Process Start(string mode,string path){var info=new ProcessStartInfo(NativePath){UseShellExecute=false,CreateNoWindow=true,RedirectStandardInput=true,RedirectStandardOutput=true,RedirectStandardError=true};info.ArgumentList.Add(mode);info.ArgumentList.Add(path);return Process.Start(info)??throw new IOException("تعذر تشغيل عارض Windows PDF");}
+ public static async Task<int> Pages(string path){var folder=Path.Combine(Path.GetTempPath(),"STP-info-"+Guid.NewGuid());Directory.CreateDirectory(folder);try{var input=Path.Combine(folder,"source.pdf");File.Copy(path,input);using var p=Start("info",input);var error=p.StandardError.ReadToEndAsync();var output=await p.StandardOutput.ReadLineAsync().WaitAsync(TimeSpan.FromSeconds(30));await p.WaitForExitAsync();if(p.ExitCode!=0||!int.TryParse(output,out var count))throw new IOException("تعذر فتح PDF: "+await error);return count;}finally{Directory.Delete(folder,true);}}
+}
+public sealed class RasterService:IDisposable {
+ readonly SemaphoreSlim gate=new(1);readonly Dictionary<string,Bitmap> cache=[];readonly Queue<string> order=[];bool disposed;Process? worker;string? activePath,folder;public bool LastCached;public double LastRasterMilliseconds;public int SourceCopies;
+ async Task Open(string path){if(worker!=null&&!worker.HasExited&&path==activePath)return;CloseWorker();folder=Path.Combine(Path.GetTempPath(),"STP-document-"+Guid.NewGuid());Directory.CreateDirectory(folder);var input=Path.Combine(folder,"source.pdf");File.Copy(path,input);SourceCopies++;worker=Pdf.Start("serve",input);var ready=await worker.StandardOutput.ReadLineAsync().WaitAsync(TimeSpan.FromSeconds(30));if(!int.TryParse(ready,out _)){var error=await worker.StandardError.ReadToEndAsync();throw new IOException("PDF: "+error);}activePath=path;}
+ public async Task<Bitmap> Render(string path,int page,Func<bool>? current=null){await gate.WaitAsync();try{if(current!=null&&!current())throw new OperationCanceledException();if(disposed)throw new ObjectDisposedException(nameof(RasterService));var key=path+":"+File.GetLastWriteTimeUtc(path).Ticks+":"+page;if(cache.TryGetValue(key,out var old)){LastCached=true;LastRasterMilliseconds=0;return old;}LastCached=false;var watch=Stopwatch.StartNew();await Open(path);if(current!=null&&!current())throw new OperationCanceledException();var output=Path.Combine(folder!,"page-"+page+".png");await worker!.StandardInput.WriteLineAsync(page+"|"+output);await worker.StandardInput.FlushAsync();var result=await worker.StandardOutput.ReadLineAsync().WaitAsync(TimeSpan.FromSeconds(60));if(result==null||!result.StartsWith("OK "))throw new IOException(result??"توقف عارض PDF");Bitmap bmp;using(var img=Image.FromFile(output))bmp=new Bitmap(img);File.Delete(output);cache[key]=bmp;order.Enqueue(key);while(order.Count>6)cache.Remove(order.Dequeue());LastRasterMilliseconds=watch.Elapsed.TotalMilliseconds;return bmp;}finally{gate.Release();}}
+ void CloseWorker(){if(worker!=null){try{if(!worker.HasExited){worker.StandardInput.WriteLine("QUIT");if(!worker.WaitForExit(1500))worker.Kill();}}catch{}worker.Dispose();worker=null;}activePath=null;if(folder!=null){try{Directory.Delete(folder,true);}catch{}folder=null;}}
+ public void Dispose(){disposed=true;CloseWorker();cache.Clear();}
+}
+public sealed class SlideSurface:Control {
+ public Image? Frame;public string? TimerText;public bool Fill;
+ public SlideSurface(){SetStyle(ControlStyles.AllPaintingInWmPaint|ControlStyles.UserPaint|ControlStyles.OptimizedDoubleBuffer|ControlStyles.ResizeRedraw|ControlStyles.Opaque,true);BackColor=Color.FromArgb(71,80,87);Dock=DockStyle.Fill;AccessibleName="صورة الشريحة";}
+ protected override void OnPaint(PaintEventArgs e){e.Graphics.Clear(BackColor);float dpi=DeviceDpi/96f;var strip=(int)Math.Round(58*dpi);var availableHeight=Height-(TimerText==null?0:strip);if(Frame!=null){float scale=Fill?Math.Max((float)Width/Frame.Width,(float)availableHeight/Frame.Height):Math.Min((float)Width/Frame.Width,(float)availableHeight/Frame.Height);var w=Frame.Width*scale;var h=Frame.Height*scale;e.Graphics.DrawImage(Frame,(Width-w)/2,(availableHeight-h)/2,w,h);}if(TimerText!=null){using var font=new Font("Segoe UI",23,FontStyle.Bold);using var bg=new SolidBrush(Color.FromArgb(236,243,244));using var fg=new SolidBrush(Color.FromArgb(0,105,111));e.Graphics.FillRectangle(bg,0,availableHeight,Width,strip);e.Graphics.DrawString(TimerText,font,fg,18*dpi,availableHeight+8*dpi);using var label=new Font("Segoe UI",12);var sf=new StringFormat{Alignment=StringAlignment.Far,FormatFlags=StringFormatFlags.DirectionRightToLeft};e.Graphics.DrawString("وقت النشاط",label,fg,new RectangleF(100*dpi,availableHeight+16*dpi,Math.Max(0,Width-120*dpi),32*dpi),sf);}}
+}
+public sealed class Audience:Form {
+ public SlideSurface Surface=new();
+ public Audience(){Text="Smart Training Presenter — Shared Presentation";Width=960;Height=700;MinimumSize=new(420,360);BackColor=Color.FromArgb(71,80,87);Controls.Add(Surface);StartPosition=FormStartPosition.Manual;ShowInTaskbar=true;}
+ public void Install(Image? frame){Surface.Frame=frame;Surface.Invalidate();}
+ public void Timer(string? text){if(Surface.TimerText!=text){Surface.TimerText=text;Surface.Invalidate();}}
+ protected override void OnResize(EventArgs e){base.OnResize(e);if(WindowState==FormWindowState.Minimized)BeginInvoke(()=>WindowState=FormWindowState.Normal);}
+}

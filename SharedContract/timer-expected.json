@@ -1,0 +1,562 @@
+[
+  {
+    "frames" : [
+      {
+        "adjusted" : 600,
+        "events" : [
+
+        ],
+        "extensions" : 0,
+        "fired" : [
+
+        ],
+        "formatted" : "10:00",
+        "remaining" : 600,
+        "running" : true,
+        "used" : 0
+      },
+      {
+        "adjusted" : 600,
+        "events" : [
+
+        ],
+        "extensions" : 0,
+        "fired" : [
+
+        ],
+        "formatted" : "09:00",
+        "remaining" : 540,
+        "running" : true,
+        "used" : 60
+      },
+      {
+        "adjusted" : 600,
+        "events" : [
+
+        ],
+        "extensions" : 0,
+        "fired" : [
+
+        ],
+        "formatted" : "08:20",
+        "remaining" : 500,
+        "running" : false,
+        "used" : 100
+      },
+      {
+        "adjusted" : 600,
+        "events" : [
+
+        ],
+        "extensions" : 0,
+        "fired" : [
+
+        ],
+        "formatted" : "08:20",
+        "remaining" : 500,
+        "running" : false,
+        "used" : 100
+      },
+      {
+        "adjusted" : 600,
+        "events" : [
+
+        ],
+        "extensions" : 0,
+        "fired" : [
+
+        ],
+        "formatted" : "08:20",
+        "remaining" : 500,
+        "running" : true,
+        "used" : 100
+      },
+      {
+        "adjusted" : 600,
+        "events" : [
+
+        ],
+        "extensions" : 0,
+        "fired" : [
+
+        ],
+        "formatted" : "07:20",
+        "remaining" : 440,
+        "running" : true,
+        "used" : 160
+      }
+    ],
+    "name" : "pause_resume"
+  },
+  {
+    "frames" : [
+      {
+        "adjusted" : 600,
+        "events" : [
+
+        ],
+        "extensions" : 0,
+        "fired" : [
+
+        ],
+        "formatted" : "10:00",
+        "remaining" : 600,
+        "running" : true,
+        "used" : 0
+      },
+      {
+        "adjusted" : 600,
+        "events" : [
+          300
+        ],
+        "extensions" : 0,
+        "fired" : [
+          300
+        ],
+        "formatted" : "04:59",
+        "remaining" : 299,
+        "running" : true,
+        "used" : 301
+      },
+      {
+        "adjusted" : 600,
+        "events" : [
+
+        ],
+        "extensions" : 0,
+        "fired" : [
+          300
+        ],
+        "formatted" : "04:58",
+        "remaining" : 298,
+        "running" : true,
+        "used" : 302
+      },
+      {
+        "adjusted" : 600,
+        "events" : [
+          60
+        ],
+        "extensions" : 0,
+        "fired" : [
+          60,
+          300
+        ],
+        "formatted" : "00:59",
+        "remaining" : 59,
+        "running" : true,
+        "used" : 541
+      },
+      {
+        "adjusted" : 600,
+        "events" : [
+          0
+        ],
+        "extensions" : 0,
+        "fired" : [
+          0,
+          60,
+          300
+        ],
+        "formatted" : "+00:01",
+        "remaining" : -1,
+        "running" : true,
+        "used" : 601
+      },
+      {
+        "adjusted" : 600,
+        "events" : [
+
+        ],
+        "extensions" : 0,
+        "fired" : [
+          0,
+          60,
+          300
+        ],
+        "formatted" : "+01:40",
+        "remaining" : -100,
+        "running" : true,
+        "used" : 700
+      },
+      {
+        "adjusted" : 600,
+        "events" : [
+
+        ],
+        "extensions" : 180,
+        "fired" : [
+          0,
+          60,
+          300
+        ],
+        "formatted" : "01:20",
+        "remaining" : 80,
+        "running" : true,
+        "used" : 700
+      },
+      {
+        "adjusted" : 600,
+        "events" : [
+
+        ],
+        "extensions" : 180,
+        "fired" : [
+          0,
+          60,
+          300
+        ],
+        "formatted" : "00:30",
+        "remaining" : 30,
+        "running" : true,
+        "used" : 750
+      },
+      {
+        "adjusted" : 600,
+        "events" : [
+
+        ],
+        "extensions" : 180,
+        "fired" : [
+          0,
+          60,
+          300
+        ],
+        "formatted" : "+00:20",
+        "remaining" : -20,
+        "running" : true,
+        "used" : 800
+      }
+    ],
+    "name" : "thresholds_once_and_overtime"
+  },
+  {
+    "frames" : [
+      {
+        "adjusted" : 900,
+        "events" : [
+
+        ],
+        "extensions" : 0,
+        "fired" : [
+
+        ],
+        "formatted" : "15:00",
+        "remaining" : 900,
+        "running" : true,
+        "used" : 0
+      },
+      {
+        "adjusted" : 900,
+        "events" : [
+          300,
+          60,
+          0
+        ],
+        "extensions" : 0,
+        "fired" : [
+          0,
+          60,
+          300
+        ],
+        "formatted" : "+01:40",
+        "remaining" : -100,
+        "running" : true,
+        "used" : 1000
+      },
+      {
+        "adjusted" : 900,
+        "events" : [
+
+        ],
+        "extensions" : 0,
+        "fired" : [
+          0,
+          60,
+          300
+        ],
+        "formatted" : "+02:30",
+        "remaining" : -150,
+        "running" : false,
+        "used" : 1050
+      },
+      {
+        "adjusted" : 900,
+        "events" : [
+
+        ],
+        "extensions" : 0,
+        "fired" : [
+          0,
+          60,
+          300
+        ],
+        "formatted" : "+02:30",
+        "remaining" : -150,
+        "running" : false,
+        "used" : 1050
+      },
+      {
+        "adjusted" : 900,
+        "events" : [
+
+        ],
+        "extensions" : 0,
+        "fired" : [
+          0,
+          60,
+          300
+        ],
+        "formatted" : "+02:30",
+        "remaining" : -150,
+        "running" : true,
+        "used" : 1050
+      },
+      {
+        "adjusted" : 900,
+        "events" : [
+
+        ],
+        "extensions" : 0,
+        "fired" : [
+          0,
+          60,
+          300
+        ],
+        "formatted" : "+02:40",
+        "remaining" : -160,
+        "running" : true,
+        "used" : 1060
+      }
+    ],
+    "name" : "background_sleep_catchup"
+  },
+  {
+    "frames" : [
+      {
+        "adjusted" : 600,
+        "events" : [
+
+        ],
+        "extensions" : 0,
+        "fired" : [
+
+        ],
+        "formatted" : "10:00",
+        "remaining" : 600,
+        "running" : true,
+        "used" : 0
+      },
+      {
+        "adjusted" : 600,
+        "events" : [
+          300
+        ],
+        "extensions" : 0,
+        "fired" : [
+          300
+        ],
+        "formatted" : "04:10",
+        "remaining" : 250,
+        "running" : true,
+        "used" : 350
+      },
+      {
+        "adjusted" : 1200,
+        "events" : [
+
+        ],
+        "extensions" : 0,
+        "fired" : [
+          300
+        ],
+        "formatted" : "14:10",
+        "remaining" : 850,
+        "running" : true,
+        "used" : 350
+      },
+      {
+        "adjusted" : 1200,
+        "events" : [
+
+        ],
+        "extensions" : 0,
+        "fired" : [
+          300
+        ],
+        "formatted" : "13:20",
+        "remaining" : 800,
+        "running" : true,
+        "used" : 400
+      },
+      {
+        "adjusted" : 1200,
+        "events" : [
+
+        ],
+        "extensions" : 60,
+        "fired" : [
+          300
+        ],
+        "formatted" : "14:20",
+        "remaining" : 860,
+        "running" : true,
+        "used" : 400
+      },
+      {
+        "adjusted" : 1200,
+        "events" : [
+
+        ],
+        "extensions" : 60,
+        "fired" : [
+          300
+        ],
+        "formatted" : "14:20",
+        "remaining" : 860,
+        "running" : true,
+        "used" : 400
+      },
+      {
+        "adjusted" : 1200,
+        "events" : [
+
+        ],
+        "extensions" : 0,
+        "fired" : [
+
+        ],
+        "formatted" : "20:00",
+        "remaining" : 1200,
+        "running" : false,
+        "used" : 0
+      },
+      {
+        "adjusted" : 1200,
+        "events" : [
+
+        ],
+        "extensions" : 0,
+        "fired" : [
+
+        ],
+        "formatted" : "20:00",
+        "remaining" : 1200,
+        "running" : true,
+        "used" : 0
+      },
+      {
+        "adjusted" : 1200,
+        "events" : [
+          300,
+          60,
+          0
+        ],
+        "extensions" : 0,
+        "fired" : [
+          0,
+          60,
+          300
+        ],
+        "formatted" : "+00:01",
+        "remaining" : -1,
+        "running" : true,
+        "used" : 1201
+      }
+    ],
+    "name" : "duration_change_and_reset"
+  },
+  {
+    "frames" : [
+      {
+        "adjusted" : 120,
+        "events" : [
+
+        ],
+        "extensions" : 0,
+        "fired" : [
+
+        ],
+        "formatted" : "02:00",
+        "remaining" : 120,
+        "running" : true,
+        "used" : 0
+      },
+      {
+        "adjusted" : 120,
+        "events" : [
+          60
+        ],
+        "extensions" : 0,
+        "fired" : [
+          60
+        ],
+        "formatted" : "00:59",
+        "remaining" : 59,
+        "running" : true,
+        "used" : 61
+      },
+      {
+        "adjusted" : 120,
+        "events" : [
+          0
+        ],
+        "extensions" : 0,
+        "fired" : [
+          0,
+          60
+        ],
+        "formatted" : "+00:01",
+        "remaining" : -1,
+        "running" : true,
+        "used" : 121
+      },
+      {
+        "adjusted" : 120,
+        "events" : [
+
+        ],
+        "extensions" : 0,
+        "fired" : [
+          0,
+          60
+        ],
+        "formatted" : "+03:00",
+        "remaining" : -180,
+        "running" : true,
+        "used" : 300
+      },
+      {
+        "adjusted" : 120,
+        "events" : [
+
+        ],
+        "extensions" : 420,
+        "fired" : [
+          0,
+          60
+        ],
+        "formatted" : "04:00",
+        "remaining" : 240,
+        "running" : true,
+        "used" : 300
+      },
+      {
+        "adjusted" : 120,
+        "events" : [
+
+        ],
+        "extensions" : 420,
+        "fired" : [
+          0,
+          60
+        ],
+        "formatted" : "03:59",
+        "remaining" : 239,
+        "running" : true,
+        "used" : 301
+      }
+    ],
+    "name" : "short_activity_and_overtime_extension"
+  }
+]

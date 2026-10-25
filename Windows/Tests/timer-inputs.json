@@ -1,0 +1,181 @@
+[
+  {
+    "name": "pause_resume",
+    "duration": 600,
+    "operations": [
+      {
+        "op": "toggle",
+        "at": 100
+      },
+      {
+        "op": "poll",
+        "at": 160
+      },
+      {
+        "op": "pause",
+        "at": 200
+      },
+      {
+        "op": "poll",
+        "at": 500
+      },
+      {
+        "op": "toggle",
+        "at": 600
+      },
+      {
+        "op": "poll",
+        "at": 660
+      }
+    ]
+  },
+  {
+    "name": "thresholds_once_and_overtime",
+    "duration": 600,
+    "operations": [
+      {
+        "op": "toggle",
+        "at": 0
+      },
+      {
+        "op": "poll",
+        "at": 301
+      },
+      {
+        "op": "poll",
+        "at": 302
+      },
+      {
+        "op": "poll",
+        "at": 541
+      },
+      {
+        "op": "poll",
+        "at": 601
+      },
+      {
+        "op": "poll",
+        "at": 700
+      },
+      {
+        "op": "extend",
+        "at": 700,
+        "seconds": 180
+      },
+      {
+        "op": "poll",
+        "at": 750
+      },
+      {
+        "op": "poll",
+        "at": 800
+      }
+    ]
+  },
+  {
+    "name": "background_sleep_catchup",
+    "duration": 900,
+    "operations": [
+      {
+        "op": "toggle",
+        "at": 100
+      },
+      {
+        "op": "poll",
+        "at": 1100
+      },
+      {
+        "op": "checkpoint",
+        "at": 1150
+      },
+      {
+        "op": "poll",
+        "at": 2000
+      },
+      {
+        "op": "toggle",
+        "at": 2100
+      },
+      {
+        "op": "poll",
+        "at": 2110
+      }
+    ]
+  },
+  {
+    "name": "duration_change_and_reset",
+    "duration": 600,
+    "operations": [
+      {
+        "op": "toggle",
+        "at": 0
+      },
+      {
+        "op": "poll",
+        "at": 350
+      },
+      {
+        "op": "changeDuration",
+        "at": 350,
+        "seconds": 1200
+      },
+      {
+        "op": "poll",
+        "at": 400
+      },
+      {
+        "op": "extend",
+        "at": 400,
+        "seconds": 60
+      },
+      {
+        "op": "extend",
+        "at": 400,
+        "seconds": -60
+      },
+      {
+        "op": "reset",
+        "at": 500
+      },
+      {
+        "op": "toggle",
+        "at": 600
+      },
+      {
+        "op": "poll",
+        "at": 1801
+      }
+    ]
+  },
+  {
+    "name": "short_activity_and_overtime_extension",
+    "duration": 120,
+    "operations": [
+      {
+        "op": "toggle",
+        "at": 10
+      },
+      {
+        "op": "poll",
+        "at": 71
+      },
+      {
+        "op": "poll",
+        "at": 131
+      },
+      {
+        "op": "poll",
+        "at": 310
+      },
+      {
+        "op": "extend",
+        "at": 310,
+        "seconds": 420
+      },
+      {
+        "op": "poll",
+        "at": 311
+      }
+    ]
+  }
+]

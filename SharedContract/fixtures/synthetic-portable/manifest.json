@@ -1,0 +1,27 @@
+{
+  "format": "stp-portable-library",
+  "version": 1,
+  "baseline": "0.6.1-build12",
+  "root_resolution": "index.root is relative to package root; restore converts paths only",
+  "counts": {
+    "bags": 1,
+    "time_items": 1,
+    "activities": 1,
+    "breaks": 0,
+    "approvals": 1,
+    "evidence": 1
+  },
+  "project_semantic_sha256": {
+    "Library/Projects/synthetic-bag.stpresenter": "3815bcaa2de0533a6e41d5bde0fce134022534e25b531fc9c0a53ed2361389c1"
+  },
+  "files_sha256": {
+    "Library/Projects/synthetic-bag.stpresenter": "b01f0537674b43e1870589d642ae386f4026b1a0dd95ae500fd03ab4f7285929",
+    "Library/index.json": "794b94a6c51fe52a3df18d79a0cc0ae5f867f75b5e8a47fad5434f5937fa5708",
+    "Materials/2d0013954bc25cad75031bfc0868332c79caa959b0f18009f81f90b04940ee6d/slides.pdf": "2d0013954bc25cad75031bfc0868332c79caa959b0f18009f81f90b04940ee6d",
+    "Materials/583aaa0defdc60a2a4150f1b818c6071c0d5b69eb79810b46b6f6801346062e8/learner.pdf": "583aaa0defdc60a2a4150f1b818c6071c0d5b69eb79810b46b6f6801346062e8",
+    "Materials/c5f28fba3f9e1f2b3c199ee523cf56fb793325830eee6015ffba493f9d2a8fbf/trainer.pdf": "c5f28fba3f9e1f2b3c199ee523cf56fb793325830eee6015ffba493f9d2a8fbf"
+  },
+  "private": false,
+  "publish_to_github": true,
+  "synthetic": true
+}

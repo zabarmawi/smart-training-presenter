@@ -1,0 +1,37 @@
+{
+  "root": ".",
+  "bags": [
+    {
+      "id": "synthetic-bag",
+      "track": "Synthetic track",
+      "domain": "Synthetic domain",
+      "title": "Synthetic bag",
+      "files": [
+        {
+          "role": "slides",
+          "relativePath": "Materials/2d0013954bc25cad75031bfc0868332c79caa959b0f18009f81f90b04940ee6d/slides.pdf",
+          "hash": "2d0013954bc25cad75031bfc0868332c79caa959b0f18009f81f90b04940ee6d"
+        },
+        {
+          "role": "trainer",
+          "relativePath": "Materials/c5f28fba3f9e1f2b3c199ee523cf56fb793325830eee6015ffba493f9d2a8fbf/trainer.pdf",
+          "hash": "c5f28fba3f9e1f2b3c199ee523cf56fb793325830eee6015ffba493f9d2a8fbf"
+        },
+        {
+          "role": "learner",
+          "relativePath": "Materials/583aaa0defdc60a2a4150f1b818c6071c0d5b69eb79810b46b6f6801346062e8/learner.pdf",
+          "hash": "583aaa0defdc60a2a4150f1b818c6071c0d5b69eb79810b46b6f6801346062e8"
+        }
+      ],
+      "activityCount": 1,
+      "approvedCount": 1,
+      "linkedCount": 1,
+      "issues": [],
+      "preparedHashes": {
+        "slides": "2d0013954bc25cad75031bfc0868332c79caa959b0f18009f81f90b04940ee6d",
+        "trainer": "c5f28fba3f9e1f2b3c199ee523cf56fb793325830eee6015ffba493f9d2a8fbf",
+        "learner": "583aaa0defdc60a2a4150f1b818c6071c0d5b69eb79810b46b6f6801346062e8"
+      }
+    }
+  ]
+}

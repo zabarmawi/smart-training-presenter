@@ -1,0 +1,57 @@
+{
+  "contract": "stp-compatibility",
+  "version": 1,
+  "baseline": "mac-intel-0.6.1-build12",
+  "project_schema_version": 1,
+  "identity_fields": [
+    "libraryBagID",
+    "materials.id",
+    "activities.id",
+    "activities.catalogID",
+    "activities.evidence.id",
+    "activities.evidence.fileID",
+    "activities.presentationID"
+  ],
+  "decision_fields": [
+    "activities.approved",
+    "activities.original",
+    "activities.duration",
+    "activities.startPage",
+    "activities.endPage",
+    "activities.proposedStartPage",
+    "activities.proposedEndPage"
+  ],
+  "only_transport_changes": [
+    "library.root",
+    "library.files.relativePath",
+    "materials.path",
+    "materials.renderedPath"
+  ],
+  "page_base": {
+    "project.currentPage": 0,
+    "project.filePages": 0,
+    "activity.startPage": 1,
+    "activity.endPage": 1,
+    "evidence.page": 1
+  },
+  "time_unit": "seconds",
+  "timer_threshold_seconds": [
+    300,
+    60,
+    0
+  ],
+  "timer_fired_is_set": true,
+  "save_pauses_timers": true,
+  "negative_remaining_is_overtime": true,
+  "automatic_reapproval": false,
+  "automatic_reanalysis_on_restore": false,
+  "author": "إعداد: فهد عبدالله زبرماوي",
+  "version_display": "read from actual build metadata",
+  "forbidden_features": [
+    "phone-server",
+    "group-timers",
+    "guidance-messages",
+    "external-language-analysis",
+    "new-teams-integration"
+  ]
+}

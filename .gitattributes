@@ -1,0 +1,7 @@
+* text=auto eol=lf
+*.pdf binary
+*.pptx binary
+*.png binary
+*.aiff binary
+*.wav binary
+SharedContract/fixtures/synthetic-portable/** -text

@@ -1,0 +1,6 @@
+#!/bin/bash
+set -euo pipefail
+cd "$(dirname "$0")/.."
+mkdir -p build/module-cache build/privacy-simplification/timer/cache
+swiftc -swift-version 5 -D TESTING -module-cache-path build/module-cache Sources/Core.swift Sources/Countdown.swift Sources/ActivityExtraction.swift Sources/DelimitedTiming.swift Sources/DocumentText.swift Sources/DocumentRevision.swift Sources/PortableProject.swift Sources/ReferenceCatalog.swift Sources/Documents.swift Sources/PowerPointConversion.swift Sources/ImageDeck.swift Sources/RecoveryWriter.swift Sources/Store.swift Sources/SharePreferences.swift Sources/SharingSession.swift Sources/SharedSlideCanvas.swift Sources/PageRasterService.swift Sources/UIAppearance.swift Sources/TimeSourcePolicy.swift Sources/PresenterWindowState.swift Sources/Store+Conversion.swift Sources/Store+Files.swift Sources/TrainingLibrary.swift Sources/GuideReader.swift Sources/LibraryPreparation.swift Sources/Store+Library.swift Tests/Tests.swift Tests/EnhancedTests.swift -o build/privacy-simplification/TimerTests
+PRESENTER_DISABLE_OCR=1 PRESENTER_CACHE="$PWD/build/privacy-simplification/timer/cache" build/privacy-simplification/TimerTests "$PWD/build/privacy-simplification/timer" "$PWD/../test-materials" --timer-core-only | tee build/privacy-simplification/timer-core.log

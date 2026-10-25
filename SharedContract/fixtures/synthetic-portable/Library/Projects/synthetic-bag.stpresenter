@@ -1,0 +1,84 @@
+{
+  "version": 1,
+  "libraryBagID": "synthetic-bag",
+  "name": "Synthetic only",
+  "materials": [
+    {
+      "id": "synthetic-slides",
+      "path": "Materials/2d0013954bc25cad75031bfc0868332c79caa959b0f18009f81f90b04940ee6d/slides.pdf",
+      "renderedPath": "Materials/2d0013954bc25cad75031bfc0868332c79caa959b0f18009f81f90b04940ee6d/slides.pdf",
+      "hash": "2d0013954bc25cad75031bfc0868332c79caa959b0f18009f81f90b04940ee6d",
+      "pages": 1,
+      "status": "synthetic",
+      "libraryRole": "slides"
+    },
+    {
+      "id": "synthetic-trainer",
+      "path": "Materials/c5f28fba3f9e1f2b3c199ee523cf56fb793325830eee6015ffba493f9d2a8fbf/trainer.pdf",
+      "renderedPath": "Materials/c5f28fba3f9e1f2b3c199ee523cf56fb793325830eee6015ffba493f9d2a8fbf/trainer.pdf",
+      "hash": "c5f28fba3f9e1f2b3c199ee523cf56fb793325830eee6015ffba493f9d2a8fbf",
+      "pages": 1,
+      "status": "synthetic",
+      "libraryRole": "trainer"
+    },
+    {
+      "id": "synthetic-learner",
+      "path": "Materials/583aaa0defdc60a2a4150f1b818c6071c0d5b69eb79810b46b6f6801346062e8/learner.pdf",
+      "renderedPath": "Materials/583aaa0defdc60a2a4150f1b818c6071c0d5b69eb79810b46b6f6801346062e8/learner.pdf",
+      "hash": "583aaa0defdc60a2a4150f1b818c6071c0d5b69eb79810b46b6f6801346062e8",
+      "pages": 1,
+      "status": "synthetic",
+      "libraryRole": "learner"
+    }
+  ],
+  "activities": [
+    {
+      "id": "synthetic-activity",
+      "title": "Synthetic activity",
+      "kind": "نشاط",
+      "officialCode": "1-1-1",
+      "day": "اليوم 1",
+      "session": "الجلسة 1",
+      "original": 600,
+      "duration": 600,
+      "approved": true,
+      "presentationID": "synthetic-slides",
+      "startPage": 1,
+      "endPage": 1,
+      "evidence": [
+        {
+          "id": "synthetic-evidence",
+          "fileID": "synthetic-trainer",
+          "filename": "trainer.pdf",
+          "page": 1,
+          "excerpt": "Synthetic ten minutes",
+          "seconds": 600,
+          "timeKind": "نشاط"
+        }
+      ]
+    }
+  ],
+  "preferences": {
+    "autoStart": false,
+    "sound": true,
+    "visual": true,
+    "volume": 0.6,
+    "noticeSeconds": 5,
+    "soundSet": 0,
+    "barMode": "مصغّر",
+    "followSlides": false
+  },
+  "timers": {},
+  "freeTimer": {
+    "original": 600,
+    "adjusted": 600,
+    "extensions": 0,
+    "elapsed": 0,
+    "running": false,
+    "fired": [],
+    "previous": 600
+  },
+  "currentActivity": "synthetic-activity",
+  "currentFile": "synthetic-slides",
+  "currentPage": 0
+}

@@ -1,0 +1,45 @@
+# Never commit licensed materials, personal decisions, caches or installers.
+PRIVATE-DATA/
+**/PRIVATE-DATA/
+**/reference-catalog.json
+*.stbag/
+*.stpresenter
+!SharedContract/fixtures/**
+__pycache__/
+*.pyc
+**/Materials/
+**/Previews/
+**/Library/
+**/Recovery.stpresenter
+**/build/
+**/dist/
+**/bin/
+**/obj/
+**/node_modules/
+*.app/
+*.dmg
+*.msi
+*.msix
+*.exe
+*.pfx
+*.p12
+.env*
+.DS_Store
+
+# Explicitly publish the reviewed synthetic fixtures only.
+!SharedContract/fixtures/
+!SharedContract/fixtures/**
+
+# Local delivery material and signing credentials
+ReleaseAssets/
+Verification/
+*.zip
+*.tar.gz
+*.key
+*.pem
+**/.build/
+**/UserData/
+**/ApprovedData/
+**/ActiveLibrary.json
+**/Recovery/
+**/pilot-org-performance-1.json

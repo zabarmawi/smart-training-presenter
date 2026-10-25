@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDisplayName</key>
+	<string>مشغّل الحقائب التدريبية الذكي</string>
+	<key>CFBundleDocumentTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeExtensions</key>
+			<array>
+				<string>stpresenter</string>
+			</array>
+			<key>CFBundleTypeName</key>
+			<string>Training Presenter Project</string>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+		</dict>
+		<dict>
+			<key>CFBundleTypeName</key>
+			<string>Portable Training Bag</string>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>com.training.smartpresenter.bag</string>
+			</array>
+			<key>LSTypeIsPackage</key>
+			<true/>
+		</dict>
+	</array>
+	<key>CFBundleExecutable</key>
+	<string>SmartTrainingPresenter</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.training.smartpresenter</string>
+	<key>CFBundleName</key>
+	<string>Smart Training Presenter</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>0.6.1</string>
+	<key>CFBundleVersion</key>
+	<string>13</string>
+	<key>LSMinimumSystemVersion</key>
+	<string>13.0</string>
+	<key>NSAppleEventsUsageDescription</key>
+	<string>تحويل نسخة مؤقتة من PowerPoint إلى PDF للعرض داخل المشغّل، دون تعديل الأصل.</string>
+	<key>NSHighResolutionCapable</key>
+	<true/>
+	<key>UTExportedTypeDeclarations</key>
+	<array>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>com.apple.package</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>Portable Training Bag</string>
+			<key>UTTypeIdentifier</key>
+			<string>com.training.smartpresenter.bag</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>stbag</string>
+				</array>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>
