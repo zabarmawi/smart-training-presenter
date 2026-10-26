@@ -50,6 +50,7 @@ import PDFKit
         if let data=bitmap.representation(using:.png,properties:[:]) {try? data.write(to:URL(fileURLWithPath:path))}
     }
     static func run(_ store:PresenterStore) {
+        if PresentationKeysSmoke.run(store,args:CommandLine.arguments) {return}
         if IdentityAcceptance.run(store,args:CommandLine.arguments) {return}
 
         let args=CommandLine.arguments

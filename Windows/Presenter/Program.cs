@@ -3,6 +3,10 @@ using System.Text.Json.Nodes;
 namespace SmartTrainingPresenter;
 static class Program {
     [STAThread] static int Main(string[] args){ApplicationConfiguration.Initialize();try{
+        if(args.Length==4&&args[0]=="--pointer-acceptance"){
+            var isolated=Path.GetFullPath(args[2]);if(Directory.Exists(isolated))throw new IOException("Pointer test requires a NEW isolated profile");Directory.CreateDirectory(isolated);
+            using var form=new Trainer(isolated,true);form.Shown+=async(_,_)=>{try{await PointerAcceptance.Run(form,args[1],isolated,args[3]);Environment.ExitCode=0;}catch(Exception ex){File.WriteAllText(args[3]+".error.txt",ex.ToString());Environment.ExitCode=1;}finally{form.Close();}};Application.Run(form);return Environment.ExitCode;
+        }
         if(args.Length==3&&args[0]=="--timer-vectors"){Countdown.Vectors(args[1],args[2]);return 0;}
         if(args.Length==4&&args[0]=="--acceptance"){var form=new Trainer(args[2],true);form.Shown+=async(_,_)=>{try{await Acceptance.Run(form,args[1],args[2],args[3]);Environment.ExitCode=0;}catch(Exception ex){J.Atomic(args[3],new JsonObject{["status"]="FAIL",["error"]=ex.ToString()});Environment.ExitCode=1;}finally{form.Close();}};Application.Run(form);return Environment.ExitCode;}
         string profile=args.Length>=2&&args[0]=="--profile"?Path.GetFullPath(args[1]):ProfilePaths.Prepare();Directory.CreateDirectory(profile);

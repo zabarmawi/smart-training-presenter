@@ -17,7 +17,8 @@ public sealed class RasterService:IDisposable {
 }
 public sealed class SlideSurface:Control {
  public Image? Frame;public string? TimerText;public bool Fill;
- public SlideSurface(){SetStyle(ControlStyles.AllPaintingInWmPaint|ControlStyles.UserPaint|ControlStyles.OptimizedDoubleBuffer|ControlStyles.ResizeRedraw|ControlStyles.Opaque,true);BackColor=Color.FromArgb(71,80,87);Dock=DockStyle.Fill;AccessibleName="صورة الشريحة";}
+ public SlideSurface(){SetStyle(ControlStyles.AllPaintingInWmPaint|ControlStyles.UserPaint|ControlStyles.OptimizedDoubleBuffer|ControlStyles.ResizeRedraw|ControlStyles.Opaque|ControlStyles.Selectable,true);TabStop=true;BackColor=Color.FromArgb(71,80,87);Dock=DockStyle.Fill;AccessibleName="صورة الشريحة";}
+ protected override void OnMouseDown(MouseEventArgs e){Focus();base.OnMouseDown(e);}
  protected override void OnPaint(PaintEventArgs e){e.Graphics.Clear(BackColor);float dpi=DeviceDpi/96f;var strip=(int)Math.Round(58*dpi);var availableHeight=Height-(TimerText==null?0:strip);if(Frame!=null){float scale=Fill?Math.Max((float)Width/Frame.Width,(float)availableHeight/Frame.Height):Math.Min((float)Width/Frame.Width,(float)availableHeight/Frame.Height);var w=Frame.Width*scale;var h=Frame.Height*scale;e.Graphics.DrawImage(Frame,(Width-w)/2,(availableHeight-h)/2,w,h);}if(TimerText!=null){using var font=new Font("Segoe UI",23,FontStyle.Bold);using var bg=new SolidBrush(Color.FromArgb(236,243,244));using var fg=new SolidBrush(Color.FromArgb(0,105,111));e.Graphics.FillRectangle(bg,0,availableHeight,Width,strip);e.Graphics.DrawString(TimerText,font,fg,18*dpi,availableHeight+8*dpi);using var label=new Font("Segoe UI",12);var sf=new StringFormat{Alignment=StringAlignment.Far,FormatFlags=StringFormatFlags.DirectionRightToLeft};e.Graphics.DrawString("وقت النشاط",label,fg,new RectangleF(100*dpi,availableHeight+16*dpi,Math.Max(0,Width-120*dpi),32*dpi),sf);}}
 }
 public sealed class Audience:Form {

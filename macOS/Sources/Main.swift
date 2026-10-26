@@ -307,8 +307,10 @@ final class AppDelegate:NSObject,NSApplicationDelegate {
     static var store:PresenterStore?
     static var pendingURLs:[URL]=[]
     private var launchWindow:NSWindow?
+    private var presenterKeys:PresentationKeys?
     func applicationDidFinishLaunching(_ notification:Notification) {
         NSApp.setActivationPolicy(.regular)
+        if let store=Self.store {let keys=PresentationKeys();keys.install(store);presenterKeys=keys}
         DispatchQueue.main.asyncAfter(deadline:.now()+0.5) {[weak self] in
             guard let self=self,!NSApp.windows.contains(where:{$0.isVisible}),let store=Self.store else {return}
             let window=NSWindow(contentRect:NSRect(x:0,y:0,width:1280,height:900),styleMask:[.titled,.closable,.miniaturizable,.resizable],backing:.buffered,defer:false)

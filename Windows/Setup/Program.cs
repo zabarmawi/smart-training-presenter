@@ -6,8 +6,8 @@ using System.Reflection;
 using System.Security.Cryptography;
 using System.Web.Script.Serialization;
 using System.Windows.Forms;
-[assembly: AssemblyVersion("0.6.1.15")]
-[assembly: AssemblyFileVersion("0.6.1.15")]
+[assembly: AssemblyVersion("0.6.1.16")]
+[assembly: AssemblyFileVersion("0.6.1.16")]
 namespace Setup {
 static class Program {
  [STAThread] static int Main(string[] args) {
@@ -17,7 +17,7 @@ static class Program {
    var form=new Form{Text="Smart Training Presenter — Windows x64 Setup",Width=750,Height=350,RightToLeft=RightToLeft.Yes,RightToLeftLayout=true,StartPosition=FormStartPosition.CenterScreen};
    var layout=new FlowLayoutPanel{Dock=DockStyle.Fill,FlowDirection=FlowDirection.TopDown,WrapContents=false,Padding=new Padding(24)};
    layout.Controls.Add(new Label{Text="تثبيت محلي للمستخدم — Smart Training Presenter\nيتطلب .NET Desktop Runtime 10 x64 وعارض Windows PDF المضمّن.\nالمكتبة الخاصة لا تُضمّن في المثبّت؛ تُستورد من داخل التطبيق.",AutoSize=true});
-   var path=new TextBox{Text=Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),"Programs","SmartTrainingPresenter-Build15"),Width=650};layout.Controls.Add(path);
+   var path=new TextBox{Text=Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),"Programs","SmartTrainingPresenter-Build16"),Width=650};layout.Controls.Add(path);
    var choose=new Button{Text="اختيار المجلد",AutoSize=true};choose.Click+=(s,e)=>{using(var d=new FolderBrowserDialog())if(d.ShowDialog(form)==DialogResult.OK)path.Text=d.SelectedPath;};layout.Controls.Add(choose);
    var install=new Button{Text="تثبيت",AutoSize=true};var status=new Label{AutoSize=true,MaximumSize=new System.Drawing.Size(650,0)};
    install.Click+=(s,e)=>{try{Install(path.Text);status.Text="اكتمل التثبيت والتحقق من بصمات الملفات. افتح SmartTrainingPresenter.exe من المجلد المحدد.";}catch(Exception ex){status.Text=ex.Message;}};
@@ -48,8 +48,8 @@ static class Program {
    Directory.CreateDirectory(target);
    foreach(var item in hashes){var source=Path.Combine(staging,item.Key);var output=Path.Combine(target,item.Key);Directory.CreateDirectory(Path.GetDirectoryName(output));File.Copy(source,output,false);if(Digest(output)!=item.Value)throw new IOException("بصمة الملف المثبت غير مطابقة");}
    File.Copy(Path.Combine(staging,"APP-SHA256.json"),Path.Combine(target,"APP-SHA256.json"),false);Directory.Delete(staging,true);
-   var shortcuts=Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.StartMenu),"Programs","Smart Training Presenter");Directory.CreateDirectory(shortcuts);dynamic shell=Activator.CreateInstance(Type.GetTypeFromProgID("WScript.Shell"));dynamic shortcut=shell.CreateShortcut(Path.Combine(shortcuts,"Smart Training Presenter.lnk"));shortcut.TargetPath=Path.Combine(target,"SmartTrainingPresenter.exe");shortcut.Arguments="";shortcut.WorkingDirectory=target;shortcut.Description="Smart Training Presenter — Build 15";shortcut.Save();System.Runtime.InteropServices.Marshal.FinalReleaseComObject(shortcut);System.Runtime.InteropServices.Marshal.FinalReleaseComObject(shell);
-   File.WriteAllText(Path.Combine(target,"installation-receipt.json"),serializer.Serialize(new{version="0.6.1.15",architecture="x64",installedAt=DateTimeOffset.UtcNow.ToString("o"),files=hashes.Count,hashesVerified=true,scope="folder installation; user profile kept separate",runtime="Microsoft.WindowsDesktop.App 10.0.x x64",pdf="Windows.Data.Pdf adapter bundled; Windows built-in runtime"}));
+   var shortcuts=Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.StartMenu),"Programs","Smart Training Presenter");Directory.CreateDirectory(shortcuts);dynamic shell=Activator.CreateInstance(Type.GetTypeFromProgID("WScript.Shell"));dynamic shortcut=shell.CreateShortcut(Path.Combine(shortcuts,"Smart Training Presenter B16.lnk"));shortcut.TargetPath=Path.Combine(target,"SmartTrainingPresenter.exe");shortcut.Arguments="";shortcut.WorkingDirectory=target;shortcut.Description="Smart Training Presenter — Build 16";shortcut.Save();System.Runtime.InteropServices.Marshal.FinalReleaseComObject(shortcut);System.Runtime.InteropServices.Marshal.FinalReleaseComObject(shell);
+   File.WriteAllText(Path.Combine(target,"installation-receipt.json"),serializer.Serialize(new{version="0.6.1.16",architecture="x64",installedAt=DateTimeOffset.UtcNow.ToString("o"),files=hashes.Count,hashesVerified=true,scope="folder installation; user profile kept separate",runtime="Microsoft.WindowsDesktop.App 10.0.x x64",pdf="Windows.Data.Pdf adapter bundled; Windows built-in runtime"}));
   }catch{if(Directory.Exists(staging))Directory.Delete(staging,true);throw;}
  }
 }

@@ -2,7 +2,7 @@
 
 إعداد: فهد عبدالله زبرماوي
 
-حزم تجريبية للإصدار 0.6.1: Mac Intel وApple Silicon بالبناء 13، وWindows x64 بالبناء 15. اختلاف رقم البناء يعكس تاريخ بناء كل منصة؛ لا يعني تطابق حالة اختبارها.
+حزم تجريبية للإصدار 0.6.1: Mac Intel وApple Silicon وWindows x64 بالبناء 16، مع إصلاح دعم أجهزة التقديم (البوينتر). لا يعني توحيد رقم البناء تطابق حالة اختبار المنصات.
 
 ## التنزيل السريع
 
@@ -10,13 +10,13 @@
 
 | الجهاز | التطبيق |
 |---|---|
-| Mac Intel | [تنزيل نسخة Intel](https://github.com/zabarmawi/smart-training-presenter/releases/download/v0.6.1-preview.1/SmartTrainingPresenter-0.6.1-B13-macOS-x86_64-preview.dmg) |
-| Mac بمعالج M1 وما بعده | [تنزيل نسخة Apple Silicon](https://github.com/zabarmawi/smart-training-presenter/releases/download/v0.6.1-preview.1/SmartTrainingPresenter-0.6.1-B13-macOS-arm64-preview.dmg) |
-| Windows x64 | [تنزيل مثبّت Windows](https://github.com/zabarmawi/smart-training-presenter/releases/download/v0.6.1-preview.1/SmartTrainingPresenter-0.6.1-B15-Windows-x64-Setup.exe) |
+| Mac Intel | [تنزيل نسخة Intel](https://github.com/zabarmawi/smart-training-presenter/releases/download/v0.6.1-preview.2/SmartTrainingPresenter-0.6.1-B16-macOS-x86_64-pointer-preview.dmg) |
+| Mac بمعالج M1 وما بعده | [تنزيل نسخة Apple Silicon](https://github.com/zabarmawi/smart-training-presenter/releases/download/v0.6.1-preview.2/SmartTrainingPresenter-0.6.1-B16-macOS-arm64-pointer-preview.dmg) |
+| Windows x64 | [تنزيل مثبّت Windows](https://github.com/zabarmawi/smart-training-presenter/releases/download/v0.6.1-preview.2/SmartTrainingPresenter-0.6.1-B16-Windows-x64-Setup.exe) |
 
-**[تنزيل المكتبة المشتركة — 11 حقيبة جاهزة](https://github.com/zabarmawi/smart-training-presenter/releases/download/v0.6.1-preview.1/SmartTrainingPresenter-TrainingLibrary-11Bags-v1.zip)**
+**[تنزيل المكتبة المشتركة — 11 حقيبة جاهزة](https://github.com/zabarmawi/smart-training-presenter/releases/download/v0.6.1-preview.2/SmartTrainingPresenter-TrainingLibrary-11Bags-v1.zip)**
 
-[جميع التنزيلات وحدود الاختبار](https://github.com/zabarmawi/smart-training-presenter/releases/tag/v0.6.1-preview.1). هذه نسخة تجريبية؛ اقرأ المتطلبات والتعليمات أدناه.
+[جميع التنزيلات وحدود الاختبار](https://github.com/zabarmawi/smart-training-presenter/releases/tag/v0.6.1-preview.2). هذه نسخة تجريبية؛ اقرأ المتطلبات والتعليمات أدناه.
 
 ## التثبيت والمكتبة
 
@@ -24,7 +24,7 @@
 
 لا يحتوي المصدر أو المثبّت وحدهما على الحقائب. تتوفر الآن حزمة مرافقة باسم SmartTrainingPresenter-TrainingLibrary-11Bags-v1.zip تضم 11 حقيبة جاهزة بالأزمنة والروابط والاعتمادات المسموح بتوزيعها من صاحب المشروع. نزّل حزمة المكتبة المرافقة أو انقل مكتبتك الخاصة من نسخة احتياطية موثوقة، واحتفظ بنسخة احتياطية من بيانات الجهاز الهدف قبل الاستعادة. لا تعِد استخراج الأنشطة لاستعادة القرارات المعتمدة.
 
-- Windows: فك ZIP إلى مجلد مستقل أو استخدم المثبّت، ثم افتح «ملف ← استيراد المكتبة المعتمدة» واختر حزمة المكتبة الخاصة. يتطلب .NET Desktop Runtime 10 x64 مثبتًا مسبقًا؛ المثبّت لا يثبته تلقائيًا. عرض PDF يستخدم Windows.Data.Pdf المدمج في النظام. تحويل PowerPoint اختياري ويتطلب محولًا محليًا مناسبًا.
+- Windows: فك ZIP إلى مجلد مستقل أو استخدم المثبّت، ثم افتح «ملف ← استعادة المكتبة المعتمدة» واختر حزمة المكتبة الخاصة. يتطلب .NET Desktop Runtime 10 x64 مثبتًا مسبقًا؛ المثبّت لا يثبته تلقائيًا. عرض PDF يستخدم Windows.Data.Pdf المدمج في النظام. تحويل PowerPoint اختياري ويتطلب محولًا محليًا مناسبًا.
 - Mac: اختر حزمة معالجك واسحب APP إلى Applications. توجد معلومات الإصدار والبناء و«إعداد: فهد عبدالله زبرماوي» في «الإعدادات ← حول التطبيق». لإضافة المكتبة المرافقة أغلق التطبيق ثم شغّل «إضافة المكتبة على Mac.command» الموجود داخل حزمة المكتبة. يرفض استبدال مكتبة موجودة. للتفاصيل راجع README داخل حزمة المكتبة وTools/README.md. لا تشغّل نسختين على بيانات المستخدم نفسها.
 
 المكتبة المرافقة المصرح بتوزيعها تضم 11 حقيبة و341 اعتمادًا و769 إحالة، في ملف تنزيل مستقل؛ لا تتضمن ملف المستخدم الشخصي أو استعادة جلسته.
@@ -33,11 +33,17 @@
 
 شارك نافذة Shared Presentation وحدها في Teams. تبقى نافذة Trainer وأدوات التحكم خاصة. لا يوجد تكامل Teams مباشر، ولا خدمة هاتف أو خادم منشور. يعتمد العرض على الملفات المحلية؛ تحويل PowerPoint اختياري ويتطلب أدوات متوافقة مع الجهاز.
 
+## استخدام البوينتر والترقية إلى B16
+
+أغلق النسخة السابقة وافتح B16 تحديدًا. ملف تطبيق Mac داخل DMG اسمه Smart Training Presenter B16، واختصار Windows اسمه Smart Training Presenter B16، للحفاظ على السابق. يستخدم B16 مكتبتك الحالية؛ لا تُعد استيرادها إذا كانت موجودة. لا تشغّل نسختين على بيانات المستخدم نفسها.
+
+Page Down/Page Up يدعمان التالي والسابق، والأسهم والمسافة وBackspace تعمل عند تركيز الشريحة. انقر الشريحة بعد الكتابة أو اختيار قائمة. عند مشاركة نافذة الجمهور عبر Teams أبقِ نافذة المدرب أو الجمهور نشطة؛ لا يلتقط التطبيق مفاتيح التطبيقات الأخرى. المصادر الخاصة وخانات التحرير تحتفظ بإدخالها. لم تُختبر جميع موديلات الأجهزة.
+
 ## حالة الاختبار
 
-- Mac Intel Build 13 مشتق من المرجع Build 12، مع إضافة معلومات التطبيق. اختبرت واجهة «حول التطبيق» على Intel؛ تنقيح حزمة النشر أزال الكتالوج المرجعي الخاص دون تغيير الشيفرة التنفيذية، مع تجديد التوقيع.
-- Apple Silicon Build 13: بناء ARM64 أصلي، ولم يُختبر التشغيل على جهاز Apple Silicon فعلي.
-- Windows Build 15: توثق أدلة الجهاز المطور التثبيت والتشغيل المعتاد واستعادة المكتبة وتصحيح التصميم. بقيت تجربة جهاز مستقل وشاشتين فعليتين واستقبال Teams والسكون والسماع وتحويل PowerPoint، وقبول المستخدم النهائي.
+- Mac Intel Build 16: اجتازت النسخة التنفيذية 28 فحصًا لإشارات أجهزة التقديم في نافذتي المدرب والجمهور وحماية الكتابة وحدود الصفحات. لم يُختبر بوينتر مادي على Mac في هذه الجولة.
+- Apple Silicon Build 16: بناء ARM64 أصلي مع تحقق التوقيع والتغليف؛ لم يُختبر التشغيل على جهاز Apple Silicon فعلي.
+- Windows Build 16: تسليم Windows يتضمن 102 فحص ناجح للتطبيق و102 للنسخة المثبتة، وتجربة بوينتر ناجحة بحسب إفادة المستخدم على جهاز Windows. لم يُشغّل Windows على Mac. لم تُعد اختبارات B15 السابقة؛ بقيت حدود الجهاز المستقل والشاشتين واستقبال Teams والسكون والسماع وتحويل PowerPoint.
 
 حزم Mac موقعة محليًا ad-hoc وغير موثقة من Apple، وحزمة Windows غير موقعة. لا يزعم هذا الإصدار اكتمال القبول النهائي لجميع المنصات. راجع RELEASE-NOTES.md.
 

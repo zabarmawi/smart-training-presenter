@@ -34,4 +34,4 @@ Compress-Archive -Path "$appDestination\*" -DestinationPath $payload
 $framework=Join-Path $env:WINDIR 'Microsoft.NET\Framework64\v4.0.30319'
 & "$framework\csc.exe" /nologo /target:winexe /platform:x64 /optimize+ /utf8output /reference:System.Windows.Forms.dll /reference:System.Drawing.dll /reference:System.Web.Extensions.dll /reference:Microsoft.CSharp.dll "/reference:$framework\System.IO.Compression.dll" "/reference:$framework\System.IO.Compression.FileSystem.dll" "/resource:$payload,payload.zip" "/out:$Destination\SmartTrainingPresenter-Setup-x64.exe" "$PSScriptRoot\Setup\Program.cs"
 if($LASTEXITCODE){throw 'Setup compilation failed'}
-Compress-Archive -Path "$appDestination\*" -DestinationPath "$Destination\SmartTrainingPresenter-0.6.1-B15-win-x64.zip"
+Compress-Archive -Path "$appDestination\*" -DestinationPath "$Destination\SmartTrainingPresenter-0.6.1-B16-win-x64.zip"
